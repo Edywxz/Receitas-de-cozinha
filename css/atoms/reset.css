@@ -1,0 +1,31 @@
+/* ==========================================================================
+   ATOMAÇÃO - RESET E BASES (CORREÇÕES DO NAVEGADOR E DEFOULT)
+   Aqui fica o reset tradicional e as regras brutas de <body>.
+   ========================================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: 80px; /* Espaço pro Header Fixo (organism) */
+}
+
+/* Base global de imagens */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Reset nativo de âncoras (Links da página) */
+a {
+  text-decoration: none;
+  color: inherit;
+}

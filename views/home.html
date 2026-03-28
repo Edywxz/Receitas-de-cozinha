@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Configurações básicas e metadados -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portal de Receitas Culinárias — Descubra deliciosas receitas brasileiras divididas por categoria, com ingredientes, modo de preparo, calorias e avisos de alergia." />
+  <title>Portal de Receitas | Sabores do Brasil</title>
+  
+  <!-- Importando a folha de estilo principal (já com o CSS atomizado) -->
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+
+  <!-- CABEÇALHO DA PÁGINA (HEADER) -->
+  <div class="header">
+    <div class="header-inner">
+      <a href="home.html" class="logo">
+        <div class="logo-icon">🍴</div>
+        <div class="logo-text">
+          <div class="logo-title">Sabores do Brasil</div>
+          <div class="logo-sub">Portal de Receitas</div>
+        </div>
+      </a>
+      <div class="header-tagline">Do fogão para a sua mesa</div>
+    </div>
+  </div>
+
+  <!-- SEÇÃO DE DESTAQUE (HERO) -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">✨ Receitas Caseiras</div>
+      <p class="hero-title">Descubra os melhores sabores da culinária</p>
+      <p class="hero-sub">Receitas selecionadas com ingredientes, modo de preparo detalhado, informações nutricionais e muito mais.</p>
+    </div>
+    <!-- Detalhe da ondinha (wave) na base do Hero -->
+    <svg class="hero-wave" viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,32 C360,60 1080,0 1440,32 L1440,50 L0,50 Z" fill="#FFF8EE"/>
+    </svg>
+  </div>
+
+  <!-- CONTEÚDO PRINCIPAL (MAIN) -->
+  <div class="main">
+
+    <!-- Seção de Filtro por Categorias (Abas) -->
+    <div class="categories-section">
+      <p class="section-title">Categorias</p>
+      <!-- As abas são geradas e renderizadas via JavaScript -->
+      <div class="category-tabs" id="categoryTabs"></div>
+    </div>
+
+    <!-- Seção de Listagem das Receitas -->
+    <div class="recipes-section">
+      <div class="recipes-header">
+        <p class="section-title">Receitas</p>
+        <!-- Contador de receitas gerado via JS -->
+        <p class="recipes-count" id="recipeCount"></p>
+      </div>
+      <!-- Grid de receitas (cards) populado via JS -->
+      <div class="recipe-grid" id="recipeGrid"></div>
+    </div>
+
+  </div>
+
+  <!-- RODAPÉ DA PÁGINA (FOOTER) -->
+  <div class="footer">
+    <div class="footer-logo">🍴 Sabores do Brasil</div>
+    <p class="footer-text">Portal de Receitas Culinárias — Feito com ❤️</p>
+  </div>
+
+  <!-- Carregando os scripts do banco de dados simulado e interatividade -->
+  <script src="../js/recipes.js"></script>
+  <script src="../js/script.js"></script>
+
+</body>
+</html>

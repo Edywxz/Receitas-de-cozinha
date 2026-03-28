@@ -1,0 +1,100 @@
+/* ==========================================================================
+   ATOMAÇÃO - CAIXOTES REUTILIZÁVEIS (HEADER / FOOTER GLOBAIS)
+   Presentes tanto no index quanto do recipe html, não são especificos de page.
+   ========================================================================== */
+
+/* ── MESTRE DO HEADER GERAL (Menu fixo no top do browser) ──────────────── */
+.header {
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 2rem;
+  height: 80px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo Interativa (Botão que retorna a Home) */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 45px;
+  height: 45px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transform: rotate(-10deg);
+  box-shadow: 0 4px 10px rgba(192, 57, 43, 0.3);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.logo-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.header-tagline {
+  font-size: 0.95rem;
+  color: var(--brown);
+  font-weight: 600;
+  font-style: italic;
+}
+
+
+/* ── RODAPÉ DA PÁGINA (FOOTER) ─────────────────────────────────────────── */
+.footer {
+  /* Gradiente usando o Token marrom */
+  background: linear-gradient(135deg, var(--brown) 0%, #4E342E 100%);
+  color: var(--bg-alt);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.footer-text {
+  font-size: 0.82rem;
+  opacity: 0.6;
+}

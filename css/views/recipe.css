@@ -1,0 +1,330 @@
+/* ==========================================================================
+   ATOMAÇÃO - RECIPE PAGE (Página Unitária das Receitas)
+   Apenas itens, styles, e containers da tela de receita detalhada.
+   ========================================================================== */
+
+/* ── CONTAINER COMPLETO (Base Máxima) ──────────────────────────────────── */
+.recipe-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* Base de Back link (Link de Retorno ao catálogo) */
+.recipe-back {
+  margin-bottom: 2rem;
+}
+
+/* ── LAYOUT EM DUAS COLUNAS (Esquerda/Direita) ───────────────────────── */
+.recipe-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+
+/* ── COLUNA 1: FOTO & CRIAÇÃO VISUAL ─────────────────────────────────── */
+.recipe-photo-col {
+  /* Mantém a Coluna presa ao rolar para tela, parando no cabeçalho. */
+  position: sticky;
+  top: 90px;
+}
+
+.recipe-photo-wrap {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 40px var(--shadow-strong);
+}
+
+.recipe-photo {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Box Fallback (Plano B quando foto falha) */
+.recipe-photo-fallback {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(135deg, var(--bg-alt), var(--border));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+}
+
+.recipe-photo-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.recipe-cat-badge {
+  background: var(--secondary);
+  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: inline-block;
+}
+
+.recipe-vid-badge {
+  background: var(--primary);
+  color: var(--white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: inline-block;
+}
+
+/* ── COLUNA 2: INFORMAÇÕES PESADAS (Texto, Calorias, Passos) ───────────── */
+.recipe-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.recipe-stars {
+  color: var(--secondary);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+}
+
+.recipe-desc {
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* ── CARTÕES DE DESTAQUE (4 Quadros da Direita) ────────────────────────── */
+.recipe-quick-info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.rqi-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 1rem 0.75rem;
+  text-align: center;
+}
+
+.rqi-icon { font-size: 1.4rem; margin-bottom: 0.3rem; }
+
+.rqi-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: block;
+  line-height: 1.2;
+}
+
+.rqi-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ── INGREDIENTES ──────────────────────────────────────────────────────── */
+.recipe-section {
+  border-top: 1px solid var(--border);
+  padding-top: 1.5rem;
+}
+
+.recipe-section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  color: var(--brown);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recipe-ingredients {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.45rem 1.5rem;
+}
+
+.recipe-ingredients li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+  padding: 0.3rem 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.recipe-ingredients li::before {
+  content: '●';
+  color: var(--primary);
+  font-size: 0.45rem;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+/* ── PASSOS DE PREPARO (Steps Numerados) ────────────────────────────────── */
+.recipe-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.recipe-steps li {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Adicionando Numeração Limpa com Display Flex invés de List-Style nativo quebrado. */
+.step-number {
+  width: 28px;
+  height: 28px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.step-text { flex: 1; }
+
+/* ── BARRA CALORICA E PAINEL NUTRICIONAL ─────────────────────────────────── */
+.recipe-nutrition {
+  background: linear-gradient(135deg, var(--bg), var(--bg-alt));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nutri-display { text-align: center; flex-shrink: 0; }
+
+.nutri-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1;
+}
+
+.nutri-unit {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.nutri-bar-wrap { flex: 1; }
+
+.nutri-bar-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.nutri-bar {
+  height: 10px;
+  background: var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 0.4rem;
+}
+
+/* A barra progressiva que simula carregamento diário. JS aplica dinamicamente style=width:% */
+.nutri-fill {
+  height: 100%;
+  border-radius: 5px;
+  background: linear-gradient(to right, var(--secondary), var(--primary));
+}
+
+/* ── VIDEO PLAYER NATIVO (IFRAMES DO YT SE HOUVER) ──────────────────── */
+.recipe-video-section {
+  border-top: 2px solid var(--border);
+  padding-top: 2.5rem;
+  margin-top: 1rem;
+}
+.recipe-video-title {
+  font-size: 1.4rem !important;
+  margin-bottom: 1.4rem !important;
+}
+
+.recipe-video-wrap {
+  position: relative;
+  /* Proporção tradicional (Aspect ratio 16:9 em Porcentagem para TV/Monitor) */
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 30px var(--shadow-strong);
+  border: 3px solid var(--secondary);
+}
+
+.recipe-video-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+/* ── EXCLUSIVO MEDIA QUERIES APENAS DO RECIPE  ──────────────────────── */
+@media (max-width: 900px) {
+  /* Quebra o Layout grid em coluna 1fr vertical (Mobile Friendly) */
+  .recipe-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .recipe-photo-col { position: static; }
+  .recipe-photo, .recipe-photo-fallback { height: 340px; }
+  .recipe-quick-info { grid-template-columns: repeat(2, 1fr); }
+  .recipe-ingredients { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .recipe-page { padding: 1.2rem 1rem 3rem; }
+  .recipe-name { font-size: 1.6rem; }
+  .recipe-nutrition { flex-direction: column; text-align: center; gap: 1rem; }
+}

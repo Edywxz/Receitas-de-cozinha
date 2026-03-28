@@ -1,0 +1,33 @@
+/* ==========================================================================
+   ATOMAÇÃO - VARIÁVEIS (TOKENS DE DESIGN)
+   Aqui ficam as cores, fontes, sombras e espaçamentos principais.
+   ========================================================================== */
+
+:root {
+  /* Cores Principais do Portal (Bandeira de Cozinha Quente) */
+  --primary: #C0392B;        /* Vermelho vibrante (pimentas, tomates) */
+  --primary-dark: #A93226;
+  --secondary: #F1C40F;      /* Amarelo gema (mostarda, frituras) */
+  
+  /* Cores de Base (Fundos e Textos) */
+  --bg: #FFFFFF;
+  --bg-alt: #FFF8EE;         /* Bege clarinho (cremes) */
+  --text: #2C3E50;
+  --text-muted: #7F8C8D;
+  --text-light: #BDC3C7;
+  
+  /* Cores de Apoio e Bordas */
+  --brown: #5D4037;          /* Marrom (torrados/chocolates) */
+  --green: #27AE60;          /* Verde (ervas frescas) */
+  --green-dark: #2E7D32;
+  --border: #E8E8E8;
+  --white: #FFFFFF;
+  
+  /* Variáveis de Sombra e Animações Globais */
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-strong: 0 12px 30px rgba(0, 0, 0, 0.15);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 0.3s ease;
+}

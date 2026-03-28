@@ -1,62 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Configurações básicas e metadados -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Receita detalhada com ingredientes, modo de preparo, informações nutricionais e vídeo tutorial." />
   <title>Receita | Sabores do Brasil</title>
-  <link rel="stylesheet" href="css/style.css" />
+  
+  <!-- Estilos Globais -->
+  <link rel="stylesheet" href="../css/style.css" />
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- CABEÇALHO DA PÁGINA (HEADER) -->
   <div class="header">
     <div class="header-inner">
-      <a href="index.html" class="logo">
+      <a href="home.html" class="logo">
         <div class="logo-icon">🍴</div>
         <div class="logo-text">
           <div class="logo-title">Sabores do Brasil</div>
           <div class="logo-sub">Portal de Receitas</div>
         </div>
       </a>
-      <div class="header-tagline">Do fogão para a sua mesa 🍳</div>
+      <div class="header-tagline">Do fogão para a sua mesa</div>
     </div>
   </div>
 
-  <!-- RECIPE PAGE -->
+  <!-- CONTAINER ESPECÍFICO DA PÁGINA DE RECEITA -->
   <div class="recipe-page">
 
-    <!-- Back link -->
+    <!-- Botão de Navegação: Retornar à página inicial -->
     <div class="recipe-back">
-      <a href="index.html" class="back-btn">← Voltar às receitas</a>
+      <a href="home.html" class="back-btn">← Voltar às receitas</a>
     </div>
 
-    <!-- Two-column layout: photo | info -->
+    <!-- Estrutura de Duas Colunas: Foto na esquerda | Informações na direita -->
     <div class="recipe-layout">
+      <!-- Coluna da Foto -->
       <div class="recipe-photo-col" id="recipePhotoCol">
-        <!-- JS renders image here -->
+        <!-- Renderizado dinamicamente via Javascript -->
       </div>
+      <!-- Coluna das Informações -->
       <div class="recipe-info-col" id="recipeInfoCol">
-        <!-- JS renders all recipe info here -->
+        <!-- Renderizado dinamicamente via Javascript com detalhes da receita -->
       </div>
     </div>
 
-    <!-- Full-width video section -->
+    <!-- Seção Retangular Completa na Base da Página: Vídeo do Youtube -->
     <div class="recipe-video-section" id="recipeVideoSection">
-      <!-- JS renders YouTube iframe here if video exists -->
+      <!-- JS injeta o iframe caso a receita tenha um video configurado no youtube_id -->
     </div>
 
   </div>
 
-  <!-- FOOTER -->
+  <!-- RODAPÉ DA PÁGINA (FOOTER) -->
   <div class="footer">
     <div class="footer-logo">🍴 Sabores do Brasil</div>
     <p class="footer-text">Portal de Receitas Culinárias — Feito com ❤️</p>
   </div>
 
-  <script src="js/recipes.js"></script>
-  <script src="js/recipe.js"></script>
+  <!-- Scripts: Dados de receitas e Lógica de exibição da página específica -->
+  <script src="../js/recipes.js"></script>
+  <script src="../js/recipe.js"></script>
 
 </body>
 </html>

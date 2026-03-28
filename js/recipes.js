@@ -1,16 +1,22 @@
+/* 
+ * ARQUIVO DE DADOS SIMULANDO UM BANCO DE DADOS (JSON)
+ * Todas as receitas que compõem o catálogo do site estão cadastradas aqui.
+ */
+
 const recipes = [
   // ── SOBREMESAS ─────────────────────────────────────────────────────────────
   {
     id: 1,
     name: "Brigadeiro",
     category: "sobremesas",
-    image: "assets/img/brigadeiro.png",
+    // Caminho ajustado para subir uma pasta (../) pois a página HTML roda de dentro de 'views/'
+    image: "../assets/img/brigadeiro.png",
     description: "O doce mais amado do Brasil, feito com leite condensado e chocolate.",
     calories: 130,
     servings: "20 unidades",
     time: "30 min",
     difficulty: "Fácil",
-    allergens: ["leite", "glúten"],
+    allergens: ["leite", "glúten"], // Arrays de alertas de alergias e estilo de vida
     rating: 5,
     ingredients: [
       "1 lata de leite condensado (395g)",
@@ -19,6 +25,7 @@ const recipes = [
       "Granulado de chocolate a gosto",
       "Forminhas de papel"
     ],
+    // Array contendo o passo a passo da receita
     steps: [
       "Em uma panela, misture o leite condensado, o cacau em pó e a manteiga.",
       "Leve ao fogo médio, mexendo sempre, por cerca de 10–12 minutos.",
@@ -27,13 +34,14 @@ const recipes = [
       "Com as mãos untadas, enrole bolinhas e passe no granulado.",
       "Coloque nas forminhas e sirva."
     ],
+    // Apenas o ID final do vídeo do YouTube para renderização limpa do iframe no player
     youtube_id: "I9d909TAtNY"
   },
   {
     id: 2,
     name: "Pudim de Leite",
     category: "sobremesas",
-    image: "assets/img/pudim.png",
+    image: "../assets/img/pudim.png",
     description: "Clássico pudim cremoso com calda de caramelo dourada.",
     calories: 210,
     servings: "8 porções",
@@ -64,7 +72,7 @@ const recipes = [
     id: 3,
     name: "X-Burguer Caseiro",
     category: "lanches",
-    image: "assets/img/hamburguer.png",
+    image: "../assets/img/hamburguer.png",
     description: "Hamburguer artesanal suculento com queijo cheddar e molho especial.",
     calories: 680,
     servings: "2 porções",
