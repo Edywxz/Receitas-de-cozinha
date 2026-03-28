@@ -99,7 +99,7 @@
   scrollbar-width: none; /* Esconde scroll lateral */
 }
 
-/* Aba Individual inativa */
+/* Aba Individual (Nativo/Padrão) */
 .tab-btn {
   background: var(--white);
   border: 1px solid var(--border);
@@ -117,8 +117,27 @@
   box-shadow: var(--shadow-sm);
 }
 
-/* Aba individual ativa (Botão pintado/clicado indicando posição do JS) */
-.tab-btn.active {
+.tab-emoji { font-size: 1.2rem; }
+
+
+/* =====================================================================
+   FILTRAGEM DE CATEGORIAS ESTÁTICAS 100% CSS (SEM JAVASCRIPT)
+   Utilizamos o pseudo-seletor :target nos divs alvos do HTML!
+   Dependendo da URL selecionada (#sobremesas, #almoco), ocultamos os outros.
+   ===================================================================== */
+
+/* Ocultador natural para as âncoras fantasmas */
+.cat-target {
+  display: none;
+}
+
+/* Destaque nativo na Guia Ativa baseado num match de Target do CSS (Substitui .active do JS passado) */
+#todos:target ~ .categories-section #btn-todos,
+#sobremesas:target ~ .categories-section #btn-sobremesas,
+#lanches:target ~ .categories-section #btn-lanches,
+#almoco:target ~ .categories-section #btn-almoco,
+#jantar:target ~ .categories-section #btn-jantar,
+#bebidas:target ~ .categories-section #btn-bebidas {
   background: var(--secondary);
   color: var(--brown);
   border-color: var(--secondary);
@@ -126,7 +145,24 @@
   transform: translateY(-2px);
 }
 
-.tab-emoji { font-size: 1.2rem; }
+/* Destaque Padrão na Guia "Todos" caso não haja :target em ninguém na url base (estado virgem home.html) */
+:not(:target) ~ .categories-section #btn-todos {
+  background: var(--secondary);
+  color: var(--brown);
+  border-color: var(--secondary);
+  box-shadow: 0 4px 12px rgba(241, 196, 15, 0.3);
+}
+
+/* Filtro e Ocultação das Receitas! Se a URL possuir um #alvo 
+   escondemos os cartões que NÃO possuem a classe referente! */
+#sobremesas:target ~ .recipes-section .recipe-card:not(.cat-sobremesas) { display: none; }
+#lanches:target ~ .recipes-section .recipe-card:not(.cat-lanches) { display: none; }
+#almoco:target ~ .recipes-section .recipe-card:not(.cat-almoco) { display: none; }
+#jantar:target ~ .recipes-section .recipe-card:not(.cat-jantar) { display: none; }
+#bebidas:target ~ .recipes-section .recipe-card:not(.cat-bebidas) { display: none; }
+
+/* ===================================================================== */
+
 
 /* ── CABEÇALHO DO GRID PRINCIPAL ─────────────────────────────────────── */
 .recipes-header {
@@ -136,36 +172,12 @@
   margin-bottom: 1.5rem;
 }
 
-.recipes-count {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  font-weight: 400;
-}
-
-.count-num {
-  display: inline;
-  font-weight: 700;
-  color: var(--primary);
-  font-size: 1rem;
-}
-
 /* ── GRID DOS CARDAPIOS ──────────────────────────────────────────────── */
 .recipe-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 1.5rem;
 }
-
-/* Estado de grid se o js nao encontrar ninguem */
-.empty-state {
-  text-align: center;
-  padding: 4rem 2rem;
-  color: var(--text-muted);
-}
-.empty-state .empty-emoji { font-size: 3.5rem; margin-bottom: 1rem; }
 
 /* ── CARTÃO DA COMIDA UNITÁRIA NO GRID (RECEITA CARD) ─────────────────── */
 .recipe-card {
@@ -338,4 +350,3 @@
   .header { padding: 0 1rem; }
   .logo-sub { display: none; }
 }
-

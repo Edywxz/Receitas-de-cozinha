@@ -4,10 +4,9 @@
   <!-- Configurações básicas e metadados -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portal de Receitas Culinárias — Descubra deliciosas receitas brasileiras divididas por categoria, com ingredientes, modo de preparo, calorias e avisos de alergia." />
+  <meta name="description" content="Portal de Receitas Culinárias — Descubra deliciosas receitas brasileiras divididas por categoria." />
   <title>Portal de Receitas | Sabores do Brasil</title>
   
-  <!-- Importando a folha de estilo principal (já com o CSS atomizado) -->
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 
@@ -16,7 +15,7 @@
   <!-- CABEÇALHO DA PÁGINA (HEADER) -->
   <div class="header">
     <div class="header-inner">
-      <a href="home.html" class="logo">
+      <a href="home.html#todos" class="logo">
         <div class="logo-icon">🍴</div>
         <div class="logo-text">
           <div class="logo-title">Sabores do Brasil</div>
@@ -34,31 +33,254 @@
       <p class="hero-title">Descubra os melhores sabores da culinária</p>
       <p class="hero-sub">Receitas selecionadas com ingredientes, modo de preparo detalhado, informações nutricionais e muito mais.</p>
     </div>
-    <!-- Detalhe da ondinha (wave) na base do Hero -->
-    <svg class="hero-wave" viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,32 C360,60 1080,0 1440,32 L1440,50 L0,50 Z" fill="#FFF8EE"/>
-    </svg>
   </div>
 
-  <!-- CONTEÚDO PRINCIPAL (MAIN) -->
+  <!-- CONTEÚDO PRINCIPAL (MAIN) ESTÁTICO E SEM JS -->
   <div class="main">
 
-    <!-- Seção de Filtro por Categorias (Abas) -->
+    <!-- 
+      === HACK CSS PARA FILTRAR AS RECEITAS SEM JAVASCRIPT ===
+      Estes "alvos" ocultos servem para a pseudo classe :target ler a URL.
+      Quando o usuario clica em uma aba, a url muda para #lanches, e o
+      alvo abaixo é ativado. Através do seletor CSS de irmãos genéricos (~),
+      podemos aplicar estilos a toda grade abaixo caso um deles seja o target!
+    -->
+    <div id="todos" class="cat-target"></div>
+    <div id="sobremesas" class="cat-target"></div>
+    <div id="lanches" class="cat-target"></div>
+    <div id="almoco" class="cat-target"></div>
+    <div id="jantar" class="cat-target"></div>
+    <div id="bebidas" class="cat-target"></div>
+
+    <!-- Navegador de Categorias (Abas em Anchor Links) -->
     <div class="categories-section">
       <p class="section-title">Categorias</p>
-      <!-- As abas são geradas e renderizadas via JavaScript -->
-      <div class="category-tabs" id="categoryTabs"></div>
+      <div class="category-tabs">
+        <a href="#todos" class="tab-btn" id="btn-todos">
+          <div class="tab-emoji">🍽️</div> Todos
+        </a>
+        <a href="#sobremesas" class="tab-btn" id="btn-sobremesas">
+          <div class="tab-emoji">🍮</div> Sobremesas
+        </a>
+        <a href="#lanches" class="tab-btn" id="btn-lanches">
+          <div class="tab-emoji">🥪</div> Lanches
+        </a>
+        <a href="#almoco" class="tab-btn" id="btn-almoco">
+          <div class="tab-emoji">🍽️</div> Almoço
+        </a>
+        <a href="#jantar" class="tab-btn" id="btn-jantar">
+          <div class="tab-emoji">🌙</div> Jantar
+        </a>
+        <a href="#bebidas" class="tab-btn" id="btn-bebidas">
+          <div class="tab-emoji">🥤</div> Bebidas
+        </a>
+      </div>
     </div>
 
-    <!-- Seção de Listagem das Receitas -->
+    <!-- Listagem HTML Inteiramente Estática de 9 Receitas -->
     <div class="recipes-section">
       <div class="recipes-header">
-        <p class="section-title">Receitas</p>
-        <!-- Contador de receitas gerado via JS -->
-        <p class="recipes-count" id="recipeCount"></p>
+        <p class="section-title">Receitas do Cardápio</p>
       </div>
-      <!-- Grid de receitas (cards) populado via JS -->
-      <div class="recipe-grid" id="recipeGrid"></div>
+      
+      <div class="recipe-grid">
+
+        <!-- 1. Brigadeiro -->
+        <a href="brigadeiro.html" class="recipe-card cat-sobremesas">
+          <div class="card-img">
+            <img src="../assets/img/brigadeiro.png" alt="Brigadeiro">
+            <div class="card-category-badge">Sobremesas</div>
+            <div class="card-video-badge">▶ Vídeo</div>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Brigadeiro</div>
+            <p class="card-desc">O doce mais amado do Brasil, feito com leite condensado e chocolate.</p>
+            <div class="card-meta">
+              <div class="card-meta-item">⏱ 30 min</div>
+              <div class="card-meta-item">👤 20 unidades</div>
+              <div class="card-meta-item stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-calories"><div class="count-num">130</div> kcal/porção</div>
+            <div class="card-btn">Ver Receita</div>
+          </div>
+        </a>
+
+        <!-- 2. Pudim de Leite -->
+        <a href="pudim.html" class="recipe-card cat-sobremesas">
+          <div class="card-img">
+            <img src="../assets/img/pudim.png" alt="Pudim de Leite">
+            <div class="card-category-badge">Sobremesas</div>
+            <div class="card-video-badge">▶ Vídeo</div>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Pudim de Leite</div>
+            <p class="card-desc">Clássico pudim cremoso com calda de caramelo dourada.</p>
+            <div class="card-meta">
+              <div class="card-meta-item">⏱ 1h 20min</div>
+              <div class="card-meta-item">👤 8 porções</div>
+              <div class="card-meta-item stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-calories"><div class="count-num">210</div> kcal/porção</div>
+            <div class="card-btn">Ver Receita</div>
+          </div>
+        </a>
+
+        <!-- 3. X-Burguer Caseiro -->
+        <a href="hamburguer.html" class="recipe-card cat-lanches">
+          <div class="card-img">
+            <img src="../assets/img/hamburguer.png" alt="X-Burguer Caseiro">
+            <div class="card-category-badge">Lanches</div>
+            <div class="card-video-badge">▶ Vídeo</div>
+          </div>
+          <div class="card-body">
+            <div class="card-name">X-Burguer Caseiro</div>
+            <p class="card-desc">Hamburguer artesanal suculento com queijo cheddar e molho especial.</p>
+            <div class="card-meta">
+              <div class="card-meta-item">⏱ 25 min</div>
+              <div class="card-meta-item">👤 2 porções</div>
+              <div class="card-meta-item stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-calories"><div class="count-num">680</div> kcal/porção</div>
+            <div class="card-btn">Ver Receita</div>
+          </div>
+        </a>
+
+        <!-- 4. Coxinha de Frango -->
+        <a href="coxinha.html" class="recipe-card cat-lanches">
+          <div class="card-img">
+            <img src="https://receitinhadavo.com.br/images/recipes/coxinha.jpg" alt="Coxinha de Frango">
+            <div class="card-category-badge">Lanches</div>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Coxinha de Frango</div>
+            <p class="card-desc">Salgado crocante recheado com frango desfiado e catupiry.</p>
+            <div class="card-meta">
+              <div class="card-meta-item">⏱ 1h</div>
+              <div class="card-meta-item">👤 15 unidades</div>
+              <div class="card-meta-item stars">★★★★☆</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-calories"><div class="count-num">280</div> kcal/porção</div>
+            <div class="card-btn">Ver Receita</div>
+          </div>
+        </a>
+
+        <!-- 5. Frango Grelhado -->
+        <a href="frango.html" class="recipe-card cat-almoco">
+          <div class="card-img">
+            <img src="https://www.seara.com.br/wp-content/uploads/2025/09/Metodo-infalivel-peito-de-frango-grelhado-e-suculento-scaled-1.jpg" alt="Frango Grelhado">
+            <div class="card-category-badge">Almoço</div>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Frango Grelhado</div>
+            <p class="card-desc">Peito de frango grelhado com ervas finas, leve e saboroso.</p>
+            <div class="card-meta">
+              <div class="card-meta-item">⏱ 20 min</div>
+              <div class="card-meta-item">👤 2 porções</div>
+              <div class="card-meta-item stars">★★★★☆</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-calories"><div class="count-num">310</div> kcal/porção</div>
+            <div class="card-btn">Ver Receita</div>
+          </div>
+        </a>
+
+        <!-- 6. Feijão Tropeiro -->
+        <a href="feijao.html" class="recipe-card cat-almoco">
+          <div class="card-img">
+            <img src="https://www.confeiteiradesucesso.com/wp-content/uploads/2021/01/feijaotropeirofacil.jpg" alt="Feijão Tropeiro">
+            <div class="card-category-badge">Almoço</div>
+            <div class="card-video-badge">▶ Vídeo</div>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Feijão Tropeiro</div>
+            <p class="card-desc">Prato mineiro robusto com feijão, farinha, bacon e couve.</p>
+            <div class="card-meta">
+              <div class="card-meta-item">⏱ 40 min</div>
+              <div class="card-meta-item">👤 4 porções</div>
+              <div class="card-meta-item stars">★★★★☆</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-calories"><div class="count-num">520</div> kcal/porção</div>
+            <div class="card-btn">Ver Receita</div>
+          </div>
+        </a>
+
+        <!-- 7. Macarrão à Bolonhesa -->
+        <a href="macarrao.html" class="recipe-card cat-jantar">
+          <div class="card-img">
+            <img src="https://pubimg.band.com.br/files/bc6e999d45cd1de4598b.png" alt="Macarrão à Bolonhesa">
+            <div class="card-category-badge">Jantar</div>
+            <div class="card-video-badge">▶ Vídeo</div>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Macarrão à Bolonhesa</div>
+            <p class="card-desc">Molho rico de carne moída com tomates e ervas italianas.</p>
+            <div class="card-meta">
+              <div class="card-meta-item">⏱ 45 min</div>
+              <div class="card-meta-item">👤 4 porções</div>
+              <div class="card-meta-item stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-calories"><div class="count-num">590</div> kcal/porção</div>
+            <div class="card-btn">Ver Receita</div>
+          </div>
+        </a>
+
+        <!-- 8. Vitamina de Banana -->
+        <a href="vitamina.html" class="recipe-card cat-bebidas">
+          <div class="card-img">
+            <img src="https://chefdianimale.com.br/wp-content/uploads/2024/11/vitamina-de-banana-1.png" alt="Vitamina de Banana">
+            <div class="card-category-badge">Bebidas</div>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Vitamina de Banana</div>
+            <p class="card-desc">Vitamina cremosa e nutritiva para qualquer hora do dia.</p>
+            <div class="card-meta">
+              <div class="card-meta-item">⏱ 5 min</div>
+              <div class="card-meta-item">👤 2 copos</div>
+              <div class="card-meta-item stars">★★★★☆</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-calories"><div class="count-num">215</div> kcal/porção</div>
+            <div class="card-btn">Ver Receita</div>
+          </div>
+        </a>
+
+        <!-- 9. Limonada Suíça -->
+        <a href="limonada.html" class="recipe-card cat-bebidas">
+          <div class="card-img">
+            <img src="https://www.receiteria.com.br/wp-content/uploads/limonada-suica-cremosa-730x914.jpg" alt="Limonada Suíça">
+            <div class="card-category-badge">Bebidas</div>
+            <div class="card-video-badge">▶ Vídeo</div>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Limonada Suíça</div>
+            <p class="card-desc">Limonada cremosa e refrescante com leite condensado.</p>
+            <div class="card-meta">
+              <div class="card-meta-item">⏱ 5 min</div>
+              <div class="card-meta-item">👤 4 copos</div>
+              <div class="card-meta-item stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="card-calories"><div class="count-num">185</div> kcal/porção</div>
+            <div class="card-btn">Ver Receita</div>
+          </div>
+        </a>
+
+      </div>
     </div>
 
   </div>
@@ -68,10 +290,6 @@
     <div class="footer-logo">🍴 Sabores do Brasil</div>
     <p class="footer-text">Portal de Receitas Culinárias — Feito com ❤️</p>
   </div>
-
-  <!-- Carregando os scripts do banco de dados simulado e interatividade -->
-  <script src="../js/recipes.js"></script>
-  <script src="../js/script.js"></script>
 
 </body>
 </html>
