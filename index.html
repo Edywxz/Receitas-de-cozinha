@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portal de Receitas Culinárias — Descubra deliciosas receitas brasileiras divididas por categoria, com ingredientes, modo de preparo, calorias e avisos de alergia." />
+  <title>Portal de Receitas | Sabores do Brasil</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🍴</div>
+        <div class="logo-text">
+          <div class="logo-title">Sabores do Brasil</div>
+          <div class="logo-sub">Portal de Receitas</div>
+        </div>
+      </a>
+      <div class="header-tagline">Do fogão para a sua mesa 🍳</div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">✨ Receitas Caseiras</div>
+      <p class="hero-title">Descubra os melhores sabores da culinária</p>
+      <p class="hero-sub">Receitas selecionadas com ingredientes, modo de preparo detalhado, informações nutricionais e muito mais.</p>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 50" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,32 C360,60 1080,0 1440,32 L1440,50 L0,50 Z" fill="#FFF8EE"/>
+    </svg>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- Category Tabs -->
+    <div class="categories-section">
+      <p class="section-title">🍽️ Escolha uma categoria</p>
+      <div class="category-tabs" id="categoryTabs"></div>
+    </div>
+
+    <!-- Recipe Grid -->
+    <div class="recipes-section">
+      <div class="recipes-header">
+        <p class="section-title">Receitas</p>
+        <p class="recipes-count" id="recipeCount"></p>
+      </div>
+      <div class="recipe-grid" id="recipeGrid"></div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">🍴 Sabores do Brasil</div>
+    <p class="footer-text">Portal de Receitas Culinárias — Feito com ❤️</p>
+  </div>
+
+  <script src="js/recipes.js"></script>
+  <script src="js/script.js"></script>
+
+</body>
+</html>
