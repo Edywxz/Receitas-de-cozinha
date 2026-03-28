@@ -78,16 +78,6 @@
   display: inline-block;
 }
 
-.recipe-vid-badge {
-  background: var(--primary);
-  color: var(--white);
-  font-size: 0.72rem;
-  font-weight: 700;
-  padding: 5px 12px;
-  border-radius: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  display: inline-block;
-}
 
 /* ── COLUNA 2: INFORMAÇÕES PESADAS (Texto, Calorias, Passos) ───────────── */
 .recipe-info-col {
@@ -281,34 +271,6 @@
   background: linear-gradient(to right, var(--secondary), var(--primary));
 }
 
-/* ── VIDEO PLAYER NATIVO (IFRAMES DO YT SE HOUVER) ──────────────────── */
-.recipe-video-section {
-  border-top: 2px solid var(--border);
-  padding-top: 2.5rem;
-  margin-top: 1rem;
-}
-.recipe-video-title {
-  font-size: 1.4rem !important;
-  margin-bottom: 1.4rem !important;
-}
-
-.recipe-video-wrap {
-  position: relative;
-  /* Proporção tradicional (Aspect ratio 16:9 em Porcentagem para TV/Monitor) */
-  padding-bottom: 56.25%;
-  height: 0;
-  border-radius: var(--radius);
-  overflow: hidden;
-  box-shadow: 0 8px 30px var(--shadow-strong);
-  border: 3px solid var(--secondary);
-}
-
-.recipe-video-wrap iframe {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  border: none;
-}
 
 /* ── EXCLUSIVO MEDIA QUERIES APENAS DO RECIPE  ──────────────────────── */
 @media (max-width: 900px) {

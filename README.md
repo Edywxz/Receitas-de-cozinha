@@ -14,7 +14,7 @@ Ele possui uma funcionalidade de "filtro", onde o usuário clica nas abas do top
 
 Este projeto foi construído seguindo rigorosos padrões de limitação estrutural com o intuito de exercitar o uso avançado de CSS e HTML puro:
 1. **100% Estático e Sem JavaScript**: Não há nenhuma linha estrutural de ECMAScript (`.js`). Lógicas de abas, filtros e roteamentos que normalmente precisariam do DOM Javascript foram engenhadas **puramente com CSS (utilizando a pseudo-classe `:target` e links âncora)**.
-2. **Tags HTML Limitadas**: Toda a interface web da plataforma precisou ser criada unicamente com as tags bases: `<div>`, `<p>`, `<a>`, `<img>`, `<ul>`, `<ol>`, `<li>`, e `<iframe>` limitando o uso comum de forms (`<input>`, `<label>`), seções semânticas (`<section>`, `<main>`), ou títulos clássicos (`<h1>` ao `<h6>`). Deste modo, a hierarquia textual e responsiva depende fortemente de classes avançadas de Cascading Style Sheets (CSS).
+2. **Tags HTML Limitadas**: Toda a interface web da plataforma precisou ser criada unicamente com as tags bases: `<div>`, `<p>`, `<a>`, `<img>`, `<ul>`, `<ol>`, e `<li>` limitando o uso comum de forms (`<input>`, `<label>`), seções semânticas (`<section>`, `<main>`), ou títulos clássicos (`<h1>` ao `<h6>`). Deste modo, a hierarquia textual e responsiva depende fortemente de classes avançadas de Cascading Style Sheets (CSS).
 
 ---
 
