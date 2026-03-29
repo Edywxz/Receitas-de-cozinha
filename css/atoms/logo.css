@@ -1,0 +1,60 @@
+/* ==========================================================================
+   ATOMAÇÃO - LOGO DA MARCA
+   Estilos específicos para a identificação visual da marca (Logo interactiva)
+   ========================================================================== */
+
+/* Logo Interativa (Botão que retorna a Home) */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 45px;
+  height: 45px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transform: rotate(-10deg);
+  box-shadow: 0 4px 10px rgba(192, 57, 43, 0.3);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.logo-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .logo-sub { display: none; }
+}

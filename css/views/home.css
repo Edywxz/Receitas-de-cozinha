@@ -348,5 +348,4 @@
 @media (max-width: 480px) {
   .recipe-grid { grid-template-columns: 1fr; }
   .header { padding: 0 1rem; }
-  .logo-sub { display: none; }
 }

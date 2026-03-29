@@ -10,6 +10,7 @@
 /* 2. Atómos (Bases do HTML, Cores, Sombra, e Resets brutos) */
 @import url('atoms/variables.css');
 @import url('atoms/reset.css');
+@import url('atoms/logo.css');
 
 /* 3. Moléculas (Utilitários reutilizáveis globalmente - Botões, Crachás) */
 @import url('molecules/components.css');
