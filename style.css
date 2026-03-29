@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding-top: 80px;
+  padding: 040px;
+}
+
+.interface-site {
+    padding-left: 5%;  /* Espaço na esquerda */
+    padding-right: 5%; /* Espaço na direita */
+    /* Usar porcentagem ajuda a manter o equilíbrio em telas de diferentes tamanhos */
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 45px;
+  height: 45px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transform: rotate(-10deg);
+  box-shadow: 0 4px 10px rgba(192, 57, 43, 0.3);
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.logo-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .logo-sub { display: none; }
+}
+
+:root {
+  /* Cores Principais do Portal (Bandeira de Cozinha Quente) */
+  --primary: #C0392B;        /* Vermelho vibrante (pimentas, tomates) */
+  --primary-dark: #A93226;
+  --secondary: #F1C40F;      /* Amarelo gema (mostarda, frituras) */
+  
+  /* Cores de Base (Fundos e Textos) */
+  --bg: #FFFFFF;
+  --bg-alt: #FFF8EE;         /* Bege clarinho (cremes) */
+  --text: #2C3E50;
+  --text-muted: #7F8C8D;
+  --text-light: #BDC3C7;
+  
+  /* Cores de Apoio e Bordas */
+  --brown: #5D4037;          /* Marrom (torrados/chocolates) */
+  --green: #27AE60;          /* Verde (ervas frescas) */
+  --green-dark: #2E7D32;
+  --border: #E8E8E8;
+  --white: #FFFFFF;
+  
+  /* Variáveis de Sombra e Animações Globais */
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.05);
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-strong: 0 12px 30px rgba(0, 0, 0, 0.15);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 0.3s ease;
+}
+
+#topo {
+  display: flex;
+  flex-direction: column; /* Alinha tudo um embaixo do outro */
+  align-items: center;    /* Centraliza os blocos horizontalmente */
+  max-width: 800px;       /* Largura ideal para leitura */
+  margin: 0 auto;         /* Centraliza o site na tela */
+  padding: 40px 20px;
+  gap: 40px;              /* Cria um espaço grande e limpo entre as seções */
+}
+
+.header-inner, #Links, p {
+  width: 100%;            /* Garante que ocupem a largura do container */
+}
+
+p {
+  color: var(--text);
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  text-align: left;       /* Texto à esquerda é mais fácil de ler que justificado */
+}
+
+/* Títulos (seus itens de lista que funcionam como títulos) */
+ul li {
+  list-style: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+  border-left: 4px solid var(--secondary); /* Um detalhe visual charmoso */
+  padding-left: 15px;
+}
+
+#Links ol {
+  display: flex;
+  flex-direction: column; /* Mantém o fluxo vertical */
+  gap: 10px;
+  padding: 0;
+}
+
+#Links ol li {
+  list-style: none;
+}
+
+#Links a {
+  display: block;
+  padding: 12px;
+  background-color: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--primary);
+  transition: var(--transition);
+}
+
+#Links a:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateX(5px); /* Efeito suave ao passar o mouse */
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  padding: 4rem 2rem 5rem;
+  text-align: center;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+/* Aquele 'rasgo' visual de onda que une o hero à main com svgs */
+.hero-wave {
+  position: absolute;
+  bottom: -1px; left: 0; right: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 1;
+}
+
+/* Container para o texto não bater nas bordas da tela */
+.container-vazado {
+  max-width: 850px; /* Largura confortável para leitura */
+  margin: 0 auto;   /* Centraliza o bloco todo */
+  padding: 20px;
+}
+
+/* Espaçamento entre os títulos (seus itens de lista) e o texto */
+ul li {
+  list-style: none;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-top: 40px;    /* Espaço ANTES do título */
+  margin-bottom: 15px; /* Espaço DEPOIS do título */
+  border-left: 4px solid var(--secondary);
+  padding-left: 15px;
+}
+
+/* O ajuste principal do seu texto */
+p {
+  color: var(--text);
+  font-size: 1.15rem;
+  line-height: 1.8;    /* Aumenta o espaço ENTRE AS LINHAS do mesmo parágrafo */
+  margin-bottom: 25px; /* Espaço ENTRE UM PARÁGRAFO E OUTRO */
+  text-align: left;
+}
+
+/* Ajuste específico para o bloco de links no final */
+#Links {
+  margin-top: 50px;
+  border-top: 1px solid var(--border);
+  padding-top: 30px;
+}
+
+.header {
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 0 2rem;
+  height: 80px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-tagline {
+  font-size: 0.95rem;
+  color: var(--brown);
+  font-weight: 600;
+  font-style: italic;
+}
+
+.footer {
+  /* Gradiente usando o Token marrom */
+  background: linear-gradient(135deg, var(--brown) 0%, #4E342E 100%);
+  color: var(--bg-alt);
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer-text {
+  font-size: 0.82rem;
+  opacity: 0.6;
+}
+
+.recipes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
