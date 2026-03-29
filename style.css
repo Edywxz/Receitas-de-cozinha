@@ -300,3 +300,30 @@ p {
   justify-content: space-between;
   margin-bottom: 1.5rem;
 }
+
+
+/* Isso estiliza a faixa onde o texto fica */
+footer {
+    background-color: #d65a5a; /* A cor rosa/vermelha que você está usando */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Isso estiliza especificamente os parágrafos dentro do footer */
+footer p {
+    color: white;             /* Muda a cor da letra para branco */
+    margin: 5px 0;            /* Espaçamento entre as linhas de texto */
+    font-family: sans-serif;  /* Uma fonte mais moderna */
+    font-size: 14px;          /* Tamanho da letra */
+}
+
+/* Deixa o primeiro parágrafo do rodapé em negrito */
+footer p:first-child {
+    font-weight: bold;
+}
+
+/* Deixa o segundo parágrafo um pouco mais transparente/discreto */
+footer p:last-child {
+    opacity: 0.8;
+    font-size: 12px;
+}
