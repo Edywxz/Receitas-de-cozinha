@@ -21,3 +21,4 @@
 /* 5. Páginas/Visões da Aplicação Web (Views de UI) */
 @import url('views/home.css');
 @import url('views/recipe.css');
+@import url('views/landing.css');

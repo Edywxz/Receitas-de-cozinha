@@ -1,0 +1,92 @@
+/* ==========================================================================
+   ATOMAÇÃO - LANDING PAGE (Página de Apresentação)
+   Estilos específicos para a landing page institucional.
+   ========================================================================== */
+
+/* ── HERO SIMPLIFICADO PARA LANDING ──────────────────────────────────── */
+.hero-landing {
+    padding: 80px 5%;
+    text-align: center;
+    background: linear-gradient(135deg, var(--bg-alt) 0%, #fff4e6 100%);
+    border-bottom: 2px solid #feedd8;
+}
+
+.hero-landing .hero-title {
+    color: var(--brown);
+    margin-bottom: 1rem;
+}
+
+.hero-landing .hero-sub {
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ── SEÇÕES DE CONTEÚDO ─────────────────────────────────────────────── */
+.content-section {
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title-landing {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-text-landing {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+    max-width: 900px;
+}
+
+/* ── RODAPÉ E LINKS (COMPLEMENTO) ─────────────────────────────────── */
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 30px 0;
+    border-top: 1px solid var(--border);
+}
+
+.footer-links-column-title {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text);
+}
+
+.footer-nav-list {
+    list-style: none;
+}
+
+.footer-nav-list li {
+    margin-bottom: 8px;
+}
+
+.footer-nav-list a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.footer-nav-list a:hover {
+    color: var(--primary);
+    padding-left: 4px;
+}
+
+.copyright-box {
+    padding: 20px 5%;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    background: var(--bg-alt);
+}

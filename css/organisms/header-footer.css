@@ -24,8 +24,6 @@
   justify-content: space-between;
 }
 
-/* Logo Atom removido para css/atoms/logo.css */
-
 .header-tagline {
   font-size: 0.95rem;
   color: var(--brown);

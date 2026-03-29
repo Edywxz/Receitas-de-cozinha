@@ -66,3 +66,36 @@
   padding: 10px 16px;
   border-radius: var(--radius-sm);
 }
+/* ── NAVEGAÇÃO (NAV-LINKS MOLECULE) ─────────────────────────────────── */
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--primary);
+}
+
+/* Botão de destaque no menu (estilo pílula) */
+.btn-pill {
+  background: var(--primary);
+  color: var(--white) !important;
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-pill:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
